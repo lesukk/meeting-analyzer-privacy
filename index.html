@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meeting Analyzer Recorder - Privacy Policy</title>
+  <style>
+    body { margin: 0; padding: 32px 16px 64px; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #223149; background: #ffffff; }
+    main { max-width: 760px; margin: 0 auto; }
+    h1 { font-size: 28px; margin: 0 0 4px; }
+    h2 { font-size: 19px; margin: 32px 0 8px; }
+    p, li { margin: 0 0 10px; }
+    .muted { color: #5b6b82; }
+    code { background: #f1f4f8; padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Meeting Analyzer Recorder - Privacy Policy</h1>
+  <p class="muted">Chrome extension published by Pecode Software for its own team. Last updated 14 October 2026.</p>
+
+  <p>Meeting Analyzer Recorder records the Google Meet call open in the current Chrome tab and sends the recording to the team's own Meeting Analyzer server, where a transcript and meeting notes are produced. The extension is private to the <code>pecodesoftware.com</code> domain and is used by the company's employees on their work accounts.</p>
+
+  <h2>What the extension handles</h2>
+  <ul>
+    <li><strong>The call's audio</strong>, and its video when the person turns "Record video" on. Recording is always started by the person with one click and is shown by a red badge and an in-page "Recording" indicator.</li>
+    <li><strong>Participant names and who is speaking</strong>, read from the Meet page only while the person is in a meeting and recording, so the transcript can say who said what.</li>
+    <li><strong>The meeting's title and Meet address</strong>, to file the recording under the right meeting.</li>
+    <li><strong>The person's own name and work email</strong>, and a sign-in token for the team's server, so the recording is filed under the right account. The token is stored in the extension's local storage, never written to its diagnostics log, and never sent anywhere but the team's server.</li>
+  </ul>
+
+  <h2>Where the data goes</h2>
+  <ul>
+    <li>Recordings go to <strong>one server only</strong>: the team's own Meeting Analyzer server (<code>ingest.pecode-meet.com</code>), over HTTPS, or to the same application running on the owner's own computer (<code>127.0.0.1</code>). Nothing is sent to any third party, and no outside AI service is used: transcription and notes run on the team's own hardware.</li>
+    <li>When video is recorded, the video file is stored on the company's own Google Drive, attached to the meeting it belongs to.</li>
+    <li>If the server cannot be reached, the recording is saved to the person's Downloads folder instead, so it is not lost; nothing is sent elsewhere.</li>
+  </ul>
+
+  <h2>What the extension does not do</h2>
+  <ul>
+    <li>It does not sell, share or transfer data to third parties.</li>
+    <li>It does not use data for advertising, analytics, profiling or any purpose unrelated to producing the meeting's transcript and notes.</li>
+    <li>It does not read the Meet chat, other tabs, browsing history or any page other than the Meet call being recorded.</li>
+    <li>It does not run any code fetched from the internet; every script ships inside the extension package.</li>
+  </ul>
+
+  <h2>Signing in</h2>
+  <p>The extension signs in with the person's existing sign-in to the team's web app (<code>meet.pecode-meet.com</code>, protected by Cloudflare Access with the company's Google accounts). Only if the browser withholds the app's session cookie does the extension ask, once, for optional cookie access, read that one cookie for that one sign-in call, and give the access back. The cookie value is not stored or logged.</p>
+
+  <h2>Permissions, in plain words</h2>
+  <ul>
+    <li><code>tabCapture</code> and <code>offscreen</code>: capture the Meet tab's sound (and picture, with video on).</li>
+    <li><code>storage</code>: settings, the sign-in token and the state of a recording in progress.</li>
+    <li><code>notifications</code>: says when a recording is saved, when a sign-in is needed again, and when the microphone is silent.</li>
+    <li><code>downloads</code>: the fallback save to Downloads when the server is unreachable.</li>
+    <li><code>alarms</code>: checks whether a finished meeting's transcript is ready; ends a sign-in that waits too long.</li>
+    <li><code>tabs</code> and <code>scripting</code>: find the open Meet tabs and put the page reader into a Meet tab that was already open when the extension was installed.</li>
+    <li>Host permissions: <code>meet.google.com</code>, the team's two server hosts, and <code>127.0.0.1</code> for the owner's own computer.</li>
+  </ul>
+
+  <h2>Retention and control</h2>
+  <p>Recordings, transcripts and notes are kept on the company's own server and Drive under the company's control. A meeting can be deleted by its owner or a team admin from the Meeting Analyzer app; deleted meetings wait in a recycle area for 30 days and are then removed. A person can sign the recorder out at any time from its Options page or revoke it from the web app's Settings; recording stops immediately.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:alex_basaraba@pecodesoftware.com">alex_basaraba@pecodesoftware.com</a>.</p>
+</main>
+</body>
+</html>
